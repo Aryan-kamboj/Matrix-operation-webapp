@@ -1,62 +1,58 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
 void main()
 {
-int a[30][30],b[30][30],m[30][30],row,col,row2,col2,i,j,k;
-clrscr();
-printf("enter the rows and colums of 1st matrix\n");
-scanf("%d%d",&row,&col);
-printf("enter the rows and colums of 2nd matrix\n");
-scanf("%d%d",&row2,&col2);
-if(col==row2)
-{
- printf("enter the elements of first matrix\n");
- for(i=0;i<row;i++)
- {
-  if(i>0)
-  {
-  printf("enter the elements of next row\n");
-  }
-  for(j=0;j<col;j++)
-  {
-  scanf("%d",&a[i][j]);
-  }
- }
- printf("enter the elements of second matrix\n");
- for(i=0;i<row2;i++)
- {
-  if(i>0)
-  {
-  printf("enter the elements of next row\n");
-  }
-  for(j=0;j<col2;j++)
-  {
-  scanf("%d",&b[i][j]);
-  }
- }
- for(i=0;i<row;i++)
- {
-  for(j=0;j<col2;j++)
-  {
-  m[i][j]=0;
-  for(k=0;k<col2;k++)
-  {
-  m[i][j]=m[i][j]+a[i][k]*b[k][j];
-  }
-  }
- }
- for(i=0;i<row;i++)
- {
-  for(j=0;j<col2;j++)
-  {
-  printf("%2d",m[i][j]);
-  }
-  printf("\n");
- }
-}
+int a[25][25],b[25][25],c[25][25],i,j,k,r,s;
+int m,n;
+printf("Enter the first matrix\n");
+scanf("%d%d",&m,&n);
+printf("Enter the second matrix\n");
+scanf("%d%d",&r,&s);
+if(m!=r)
+printf("\n The matrix cannot multiplied");
 else
 {
-printf("this matrix multiplication is not possible");
+printf("\n Enter the elements of first matrix ");
+for(i= 0;i<m;i++)
+{
+for(j=0;j<n;j++)
+scanf("\t%d",&a[i][j]);
 }
- getch();
+printf("\n Enetr the elements of second matrix ");
+for(i=0;i<m;i++)
+{
+for(j=0;j<n;j++)
+scanf("\t%d",&b[i][j]);
+}
+printf("\n The element of first matrix is");
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+printf("\t%d",a[i][j]);
+}
+printf("\n The element of second matrix is");
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+printf("\t%d",b[i][j]);
+}
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+{
+c[i][j]=0;
+for(k=0;k<m;k++)
+c[i][j]=c[i][j]+a[i][k]*b[k][j];
+}
+}
+}
+printf("\n Multiplication of two matrix is");
+for(i=0;i<m;i++)
+{
+printf("\n");
+for(j=0;j<n;j++)
+printf("\t%d",c[i][j]);
+}
 }
